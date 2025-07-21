@@ -1,0 +1,14 @@
+- Create Migrations
+  $ dotnet ef migrations add MigrationName
+
+- Create a .db file
+  $ dotnet ef database update
+
+- Build application
+  $ dotnet build
+
+- Run application
+  $ dotnet run
+
+- Run reload server
+  $ dotnet watch

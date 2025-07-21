@@ -1,0 +1,7 @@
+FROM mcr.microsoft.com/devcontainers/dotnet:dev-8.0
+ENV USER=vscode
+WORKDIR /app
+EXPOSE 8082
+RUN chown -R $USER:$USER /app
+USER $USER
+CMD ["tail", "-f", "/dev/null"]

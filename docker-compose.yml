@@ -1,0 +1,19 @@
+networks:
+  devnet:
+    name: devnet
+    driver: bridge
+
+services:
+  container-dev:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    container_name: container-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.remote
+    ports:
+      - '8082:8080' #my-pc:my-container
+    networks:
+      - devnet
+    volumes:
+      - '.:/app'
